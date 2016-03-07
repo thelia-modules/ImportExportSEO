@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config xmlns="http://thelia.net/schema/dic/config"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
+    <import_categories>
+        <import_category id="thelia.import.categories">
+            <title locale="fr_FR">Catégories</title>
+            <title locale="en_US">Categories</title>
+        </import_category>
+        <import_category id="thelia.import.brands">
+            <title locale="fr_FR">Marques</title>
+            <title locale="en_US">Brands</title>
+        </import_category>
+        <import_category id="thelia.import.content">
+            <title locale="fr_FR">Contenu</title>
+            <title locale="en_US">Content</title>
+        </import_category>
+        <import_category id="thelia.import.folders">
+            <title locale="fr_FR">Dossiers</title>
+            <title locale="en_US">Folders</title>
+        </import_category>
+    </import_categories>
+
+    <imports>
+        <import id="thelia.import.product" class="ImportExportMeta\Controller\ProductSEOImport" category_id="thelia.import.products">
+            <import_descriptive locale="fr_FR">
+                <title>Importer les informations SEO de vos produits</title>
+                <description>
+                    <![CDATA[
+                    Votre fichier doit avoir les colonnes suivantes :
+                    <ul>
+                        <li>ref: La référence de votre produit</li>
+                    </ul>
+                    Il peut optionnellement avoir ces colonnes :
+                    <ul>
+                        <li>page_title: Le titre de la page produit</li>
+                        <li>meta_description: La description du produit</li>
+                        <li>meta_keywords: Les mots clés de votre produit</li>
+                    </ul>
+                    Les colonnes product_title et visible sont à titre informatives, aucun changement ne sera pris en compte.
+                    ]]>
+                </description>
+            </import_descriptive>
+            <import_descriptive locale="en_US">
+                <title>Import your products SEO information</title>
+                <description>
+                    <![CDATA[
+                    Your file must have the following columns to work:
+                    <ul>
+                        <li>ref: Your product reference</li>
+                    </ul>
+                    It may also optionnaly have those columns :
+                    <ul>
+                        <li>page_title: The title of the product page</li>
+                        <li>meta_description: The product description</li>
+                        <li>meta_keywords: The product keywords</li>
+                    </ul>
+                    The product_title column and visible column are for information purposes, no change will be taken into account.
+                    ]]>
+                </description>
+            </import_descriptive>
+        </import>
+        <import id="thelia.import.category" class="ImportExportMeta\Controller\CategorySEOImport" category_id="thelia.import.categories">
+            <import_descriptive locale="fr_FR">
+                <title>Importer les informations SEO de vos catégories</title>
+                <description>
+                    <![CDATA[
+                    Votre fichier doit avoir les colonnes suivantes :
+                    <ul>
+                        <li>id: L'id de votre catégorie</li>
+                    </ul>
+                    Il peut optionnellement avoir ces colonnes :
+                    <ul>
+                        <li>meta_title: Le titre de la catégorie</li>
+                        <li>meta_description: La description de la catégorie</li>
+                        <li>meta_keywords: Les mots clés de votre catégorie</li>
+                    </ul>
+                    La colonne title est à titre informative, aucun changement ne sera pris en compte.
+                    ]]>
+                </description>
+            </import_descriptive>
+            <import_descriptive locale="en_US">
+                <title>Import your category SEO information</title>
+                <description>
+                    <![CDATA[
+                    Your file must have the following columns to work:
+                    <ul>
+                        <li>id: Your category id</li>
+                    </ul>
+                    It may also optionnaly have those columns :
+                    <ul>
+                        <li>meta_title: The title of the category</li>
+                        <li>meta_description: The category description</li>
+                        <li>meta_keywords: The category keywords</li>
+                    </ul>
+                    The title column is for information purposes, no change will be taken into account.
+                    ]]>
+                </description>
+            </import_descriptive>
+        </import>
+        <import id="thelia.import.brand" class="ImportExportMeta\Controller\BrandSEOImport" category_id="thelia.import.brands">
+            <import_descriptive locale="fr_FR">
+                <title>Importer les informations SEO de vos marques</title>
+                <description>
+                    <![CDATA[
+                    Votre fichier doit avoir les colonnes suivantes :
+                    <ul>
+                        <li>id: L'id de votre marque</li>
+                    </ul>
+                    Il peut optionnellement avoir ces colonnes :
+                    <ul>
+                        <li>meta_title: Le titre de la marque</li>
+                        <li>meta_description: La description de la marque</li>
+                        <li>meta_keywords: Les mots clés de votre marque</li>
+                    </ul>
+                    La colonne title est à titre informative, aucun changement ne sera pris en compte.
+                    ]]>
+                </description>
+            </import_descriptive>
+            <import_descriptive locale="en_US">
+                <title>Import your brand SEO information</title>
+                <description>
+                    <![CDATA[
+                    Your file must have the following columns to work:
+                    <ul>
+                        <li>id: Your brand id</li>
+                    </ul>
+                    It may also optionnaly have those columns :
+                    <ul>
+                        <li>meta_title: The title of the brand</li>
+                        <li>meta_description: The brand description</li>
+                        <li>meta_keywords: The brand keywords</li>
+                    </ul>
+                    The title column is for information purposes, no change will be taken into account.
+                    ]]>
+                </description>
+            </import_descriptive>
+        </import>
+        <import id="thelia.import.content" class="ImportExportMeta\Controller\ContentSEOImport" category_id="thelia.import.content">
+            <import_descriptive locale="fr_FR">
+                <title>Importer les informations SEO de vos contenus</title>
+                <description>
+                    <![CDATA[
+                    Votre fichier doit avoir les colonnes suivantes :
+                    <ul>
+                        <li>id: L'id de votre contenu</li>
+                    </ul>
+                    Il peut optionnellement avoir ces colonnes :
+                    <ul>
+                        <li>meta_title: Le titre du contenu</li>
+                        <li>meta_description: La description du contenu</li>
+                        <li>meta_keywords: Les mots clés de votre contenu</li>
+                    </ul>
+                    La colonne title est à titre informative, aucun changement ne sera pris en compte.
+                    ]]>
+                </description>
+            </import_descriptive>
+            <import_descriptive locale="en_US">
+                <title>Import your contents SEO information</title>
+                <description>
+                    <![CDATA[
+                    Your file must have the following columns to work:
+                    <ul>
+                        <li>id: Your content id</li>
+                    </ul>
+                    It may also optionnaly have those columns :
+                    <ul>
+                        <li>meta_title: The title of the content</li>
+                        <li>meta_description: The content description</li>
+                        <li>meta_keywords: The content keywords</li>
+                    </ul>
+                    The title column is for information purposes, no change will be taken into account.
+                    ]]>
+                </description>
+            </import_descriptive>
+        </import>
+        <import id="thelia.import.folder" class="ImportExportMeta\Controller\FolderSEOImport" category_id="thelia.import.folders">
+            <import_descriptive locale="fr_FR">
+                <title>Importer les informations SEO de vos dossiers</title>
+                <description>
+                    <![CDATA[
+                    Votre fichier doit avoir les colonnes suivantes :
+                    <ul>
+                        <li>id: L'id de votre dossier</li>
+                    </ul>
+                    Il peut optionnellement avoir ces colonnes :
+                    <ul>
+                        <li>meta_title: Le titre du dossier</li>
+                        <li>meta_description: La description du dossier</li>
+                        <li>meta_keywords: Les mots clés de votre dossier</li>
+                    </ul>
+                    La colonne title est à titre informative, aucun changement ne sera pris en compte.
+                    ]]>
+                </description>
+            </import_descriptive>
+            <import_descriptive locale="en_US">
+                <title>Import your folders SEO information</title>
+                <description>
+                    <![CDATA[
+                    Your file must have the following columns to work:
+                    <ul>
+                        <li>id: Your folder id</li>
+                    </ul>
+                    It may also optionnaly have those columns :
+                    <ul>
+                        <li>meta_title: The title of the folder</li>
+                        <li>meta_description: The folder description</li>
+                        <li>meta_keywords: The folder keywords</li>
+                    </ul>
+                    The title column is for information purposes, no change will be taken into account.
+                    ]]>
+                </description>
+            </import_descriptive>
+        </import>
+    </imports>
+
+    <export_categories>
+        <export_category id="thelia.export.brands">
+            <title locale="en_US">Brands</title>
+            <title locale="fr_FR">Marques</title>
+        </export_category>
+        <export_category id="thelia.export.categories">
+            <title locale="en_US">Categories</title>
+            <title locale="fr_FR">Catégories</title>
+        </export_category>
+        <export_category id="thelia.export.folders">
+            <title locale="en_US">Folders</title>
+            <title locale="fr_FR">Dossiers</title>
+        </export_category>
+    </export_categories>
+
+    <exports>
+        <export id="thelia.export.product" class="ImportExportMeta\Controller\ProductSEOExport" category_id="thelia.export.products">
+            <export_descriptive locale="en_US">
+                <title>Product SEO information</title>
+                <description>
+                    Export the SEO information of your products ( rewritten url, meta description and keywords, page title )
+                </description>
+            </export_descriptive>
+            <export_descriptive locale="fr_FR">
+                <title>Informations SEO des produits</title>
+                <description>
+                    Exporter les informations SEO de vos produits ( url réécrites, meta description et mots clés, titre )
+                </description>
+            </export_descriptive>
+        </export>
+        <export id="thelia.export.category" class="ImportExportMeta\Controller\CategorySEOExport" category_id="thelia.export.categories">
+            <export_descriptive locale="en_US">
+                <title>Category SEO information</title>
+                <description>
+                    Export the SEO information of your categories ( id, meta description, meta title, meta keywords, title )
+                </description>
+            </export_descriptive>
+            <export_descriptive locale="fr_FR">
+                <title>Informations SEO des catégories</title>
+                <description>
+                    Exporter les informations SEO de vos catégories ( id, meta description, meta titre, metat mots clés, titre )
+                </description>
+            </export_descriptive>
+        </export>
+        <export id="thelia.export.brand" class="ImportExportMeta\Controller\BrandSEOExport" category_id="thelia.export.brands">
+            <export_descriptive locale="en_US">
+                <title>Brand SEO information</title>
+                <description>
+                    Export the SEO information of your brands ( id, meta description, meta title, meta keywords, title )
+                </description>
+            </export_descriptive>
+            <export_descriptive locale="fr_FR">
+                <title>Informations SEO des marques</title>
+                <description>
+                    Exporter les informations SEO de vos marques ( id, meta description, meta titre, metat mots clés, titre )
+                </description>
+            </export_descriptive>
+        </export>
+        <export id="thelia.export.content.seo" class="ImportExportMeta\Controller\ContentSEOExport" category_id="thelia.export.content">
+            <export_descriptive locale="en_US">
+                <title>Content SEO information</title>
+                <description>
+                    Export the SEO information of your contents ( id, meta description, meta title, meta keywords, title )
+                </description>
+            </export_descriptive>
+            <export_descriptive locale="fr_FR">
+                <title>Informations SEO des contenus</title>
+                <description>
+                    Exporter les informations SEO de vos contenus ( id, meta description, meta titre, metat mots clés, titre )
+                </description>
+            </export_descriptive>
+        </export>
+        <export id="thelia.export.folder" class="ImportExportMeta\Controller\FolderSEOExport" category_id="thelia.export.folders">
+            <export_descriptive locale="en_US">
+                <title>Folder SEO information</title>
+                <description>
+                    Export the SEO information of your folders ( id, meta description, meta title, meta keywords, title )
+                </description>
+            </export_descriptive>
+            <export_descriptive locale="fr_FR">
+                <title>Informations SEO des dossiers</title>
+                <description>
+                    Exporter les informations SEO de vos dossiers ( id, meta description, meta titre, metat mots clés, titre )
+                </description>
+            </export_descriptive>
+        </export>
+    </exports>
+
+</config>
