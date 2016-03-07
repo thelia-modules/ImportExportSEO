@@ -10,22 +10,21 @@
 /*      file that was distributed with this source code.                             */
 /*************************************************************************************/
 
-namespace ImportExportMeta\Controller;
-
+namespace ImportExportMeta\Import;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Thelia\Core\Event\TheliaEvents;
 use Thelia\Core\Event\UpdateSeoEvent;
 use Thelia\Core\Translation\Translator;
 use Thelia\ImportExport\Import\AbstractImport;
-use Thelia\Model\ContentQuery;
+use Thelia\Model\BrandQuery;
 
 /**
- * Class ContentSEOImport
+ * Class BrandSEOImport
  * @package ImportExportMeta\Controller
  * @author Tom Pradat <tpradat@openstudio.fr>
  */
-class ContentSEOImport extends AbstractImport
+class BrandSEOImport extends AbstractImport
 {
     protected $mandatoryColumns = [
         'id'
@@ -36,12 +35,12 @@ class ContentSEOImport extends AbstractImport
         /** @var EventDispatcherInterface $eventDispatcher */
         $eventDispatcher = $this->getContainer()->get('event_dispatcher');
 
-        $content = ContentQuery::create()->findPk($data['id']);
-        $id = $content->getId();
+        $brand = BrandQuery::create()->findPk($data['id']);
+        $id = $brand->getId();
 
-        if($content === null){
+        if($brand === null){
             return Translator::getInstance()->trans(
-                'The content id %id doesn\'t exist',
+                'The brand id %id doesn\'t exist',
                 [
                     '%id' => $data['id']
                 ]
@@ -59,7 +58,7 @@ class ContentSEOImport extends AbstractImport
                 ->setMetaKeywords($data['meta_keywords'])
             ;
 
-            $eventDispatcher->dispatch(TheliaEvents::CONTENT_UPDATE_SEO, $updateSeoEvent);
+            $eventDispatcher->dispatch(TheliaEvents::BRAND_UPDATE_SEO, $updateSeoEvent);
             $this->importedRows++;
 
         }

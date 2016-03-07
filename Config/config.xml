@@ -23,7 +23,7 @@
     </import_categories>
 
     <imports>
-        <import id="thelia.import.product" class="ImportExportMeta\Controller\ProductSEOImport" category_id="thelia.import.products">
+        <import id="thelia.import.product" class="ImportExportMeta\Import\ProductSEOImport" category_id="thelia.import.products">
             <import_descriptive locale="fr_FR">
                 <title>Importer les informations SEO de vos produits</title>
                 <description>
@@ -61,7 +61,7 @@
                 </description>
             </import_descriptive>
         </import>
-        <import id="thelia.import.category" class="ImportExportMeta\Controller\CategorySEOImport" category_id="thelia.import.categories">
+        <import id="thelia.import.category" class="ImportExportMeta\Import\CategorySEOImport" category_id="thelia.import.categories">
             <import_descriptive locale="fr_FR">
                 <title>Importer les informations SEO de vos catégories</title>
                 <description>
@@ -99,7 +99,7 @@
                 </description>
             </import_descriptive>
         </import>
-        <import id="thelia.import.brand" class="ImportExportMeta\Controller\BrandSEOImport" category_id="thelia.import.brands">
+        <import id="thelia.import.brand" class="ImportExportMeta\Import\BrandSEOImport" category_id="thelia.import.brands">
             <import_descriptive locale="fr_FR">
                 <title>Importer les informations SEO de vos marques</title>
                 <description>
@@ -137,7 +137,7 @@
                 </description>
             </import_descriptive>
         </import>
-        <import id="thelia.import.content" class="ImportExportMeta\Controller\ContentSEOImport" category_id="thelia.import.content">
+        <import id="thelia.import.content" class="ImportExportMeta\Import\ContentSEOImport" category_id="thelia.import.content">
             <import_descriptive locale="fr_FR">
                 <title>Importer les informations SEO de vos contenus</title>
                 <description>
@@ -175,7 +175,7 @@
                 </description>
             </import_descriptive>
         </import>
-        <import id="thelia.import.folder" class="ImportExportMeta\Controller\FolderSEOImport" category_id="thelia.import.folders">
+        <import id="thelia.import.folder" class="ImportExportMeta\Import\FolderSEOImport" category_id="thelia.import.folders">
             <import_descriptive locale="fr_FR">
                 <title>Importer les informations SEO de vos dossiers</title>
                 <description>
@@ -231,7 +231,7 @@
     </export_categories>
 
     <exports>
-        <export id="thelia.export.product" class="ImportExportMeta\Controller\ProductSEOExport" category_id="thelia.export.products">
+        <export id="thelia.export.product" class="ImportExportMeta\Export\ProductSEOExport" category_id="thelia.export.products">
             <export_descriptive locale="en_US">
                 <title>Product SEO information</title>
                 <description>
@@ -245,7 +245,7 @@
                 </description>
             </export_descriptive>
         </export>
-        <export id="thelia.export.category" class="ImportExportMeta\Controller\CategorySEOExport" category_id="thelia.export.categories">
+        <export id="thelia.export.category" class="ImportExportMeta\Export\CategorySEOExport" category_id="thelia.export.categories">
             <export_descriptive locale="en_US">
                 <title>Category SEO information</title>
                 <description>
@@ -259,7 +259,7 @@
                 </description>
             </export_descriptive>
         </export>
-        <export id="thelia.export.brand" class="ImportExportMeta\Controller\BrandSEOExport" category_id="thelia.export.brands">
+        <export id="thelia.export.brand" class="ImportExportMeta\Export\BrandSEOExport" category_id="thelia.export.brands">
             <export_descriptive locale="en_US">
                 <title>Brand SEO information</title>
                 <description>
@@ -273,7 +273,7 @@
                 </description>
             </export_descriptive>
         </export>
-        <export id="thelia.export.content.seo" class="ImportExportMeta\Controller\ContentSEOExport" category_id="thelia.export.content">
+        <export id="thelia.export.content.seo" class="ImportExportMeta\Export\ContentSEOExport" category_id="thelia.export.content">
             <export_descriptive locale="en_US">
                 <title>Content SEO information</title>
                 <description>
@@ -287,7 +287,7 @@
                 </description>
             </export_descriptive>
         </export>
-        <export id="thelia.export.folder" class="ImportExportMeta\Controller\FolderSEOExport" category_id="thelia.export.folders">
+        <export id="thelia.export.folder" class="ImportExportMeta\Export\FolderSEOExport" category_id="thelia.export.folders">
             <export_descriptive locale="en_US">
                 <title>Folder SEO information</title>
                 <description>

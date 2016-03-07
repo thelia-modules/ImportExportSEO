@@ -10,7 +10,7 @@
 /*      file that was distributed with this source code.                             */
 /*************************************************************************************/
 
-namespace ImportExportMeta\Controller;
+namespace ImportExportMeta\Import;
 
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -18,14 +18,14 @@ use Thelia\Core\Event\TheliaEvents;
 use Thelia\Core\Event\UpdateSeoEvent;
 use Thelia\Core\Translation\Translator;
 use Thelia\ImportExport\Import\AbstractImport;
-use Thelia\Model\FolderQuery;
+use Thelia\Model\CategoryQuery;
 
 /**
- * Class FolderSEOImport
+ * Class CategorySEOImport
  * @package ImportExportMeta\Controller
  * @author Tom Pradat <tpradat@openstudio.fr>
  */
-class FolderSEOImport extends AbstractImport
+class CategorySEOImport extends AbstractImport
 {
     protected $mandatoryColumns = [
         'id'
@@ -36,12 +36,12 @@ class FolderSEOImport extends AbstractImport
         /** @var EventDispatcherInterface $eventDispatcher */
         $eventDispatcher = $this->getContainer()->get('event_dispatcher');
 
-        $folder = FolderQuery::create()->findPk($data['id']);
-        $id = $folder->getId();
+        $category = CategoryQuery::create()->findPk($data['id']);
+        $id = $category->getId();
 
-        if($folder === null){
+        if($category === null){
             return Translator::getInstance()->trans(
-                'The folder id %id doesn\'t exist',
+                'The category id %id doesn\'t exist',
                 [
                     '%id' => $data['id']
                 ]
@@ -59,7 +59,7 @@ class FolderSEOImport extends AbstractImport
                 ->setMetaKeywords($data['meta_keywords'])
             ;
 
-            $eventDispatcher->dispatch(TheliaEvents::FOLDER_UPDATE_SEO, $updateSeoEvent);
+            $eventDispatcher->dispatch(TheliaEvents::CATEGORY_UPDATE_SEO, $updateSeoEvent);
             $this->importedRows++;
 
         }

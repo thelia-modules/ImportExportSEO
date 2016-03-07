@@ -1,5 +1,4 @@
 <?php
-
 /*************************************************************************************/
 /*      This file is part of the ImportExportMeta package.                           */
 /*                                                                                   */
@@ -11,44 +10,40 @@
 /*      file that was distributed with this source code.                             */
 /*************************************************************************************/
 
-namespace ImportExportMeta\Controller;
+namespace ImportExportMeta\Import;
+
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Thelia\Core\Event\TheliaEvents;
 use Thelia\Core\Event\UpdateSeoEvent;
-use Thelia\ImportExport\Import\AbstractImport;
-use Thelia\Model\ProductQuery;
 use Thelia\Core\Translation\Translator;
+use Thelia\ImportExport\Import\AbstractImport;
+use Thelia\Model\FolderQuery;
 
 /**
- * Class ProductSEOImport
+ * Class FolderSEOImport
  * @package ImportExportMeta\Controller
  * @author Tom Pradat <tpradat@openstudio.fr>
  */
-class ProductSEOImport extends AbstractImport
+class FolderSEOImport extends AbstractImport
 {
     protected $mandatoryColumns = [
-        'ref',
-        'visible',
+        'id'
     ];
 
-    /**
-     * @param array $data
-     * @return string
-     */
     public function importData(array $data)
     {
         /** @var EventDispatcherInterface $eventDispatcher */
         $eventDispatcher = $this->getContainer()->get('event_dispatcher');
 
-        $product = ProductQuery::create()->findOneByRef($data['ref']);
-        $id = $product->getId();
+        $folder = FolderQuery::create()->findPk($data['id']);
+        $id = $folder->getId();
 
-        if($product === null){
+        if($folder === null){
             return Translator::getInstance()->trans(
-                'The product ref %ref doesn\'t exist',
+                'The folder id %id doesn\'t exist',
                 [
-                    '%ref' => $data['ref']
+                    '%id' => $data['id']
                 ]
             );
         } else {
@@ -59,13 +54,12 @@ class ProductSEOImport extends AbstractImport
 
             $updateSeoEvent
                 ->setLocale($locale)
-                ->setMetaTitle($data['page_title'])
+                ->setMetaTitle($data['meta_title'])
                 ->setMetaDescription($data['meta_description'])
                 ->setMetaKeywords($data['meta_keywords'])
-                ->setUrl($data['url'])
             ;
 
-            $eventDispatcher->dispatch(TheliaEvents::PRODUCT_UPDATE_SEO, $updateSeoEvent);
+            $eventDispatcher->dispatch(TheliaEvents::FOLDER_UPDATE_SEO, $updateSeoEvent);
             $this->importedRows++;
 
         }

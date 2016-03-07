@@ -10,7 +10,7 @@
 /*      file that was distributed with this source code.                             */
 /*************************************************************************************/
 
-namespace ImportExportMeta\Controller;
+namespace ImportExportMeta\Export;
 
 
 use Propel\Runtime\ActiveQuery\Criteria;

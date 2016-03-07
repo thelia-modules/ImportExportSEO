@@ -10,47 +10,48 @@
 /*      file that was distributed with this source code.                             */
 /*************************************************************************************/
 
-namespace ImportExportMeta\Controller;
+namespace ImportExportMeta\Export;
+
 
 use Propel\Runtime\ActiveQuery\Criteria;
 use Propel\Runtime\ActiveQuery\Join;
 use Thelia\ImportExport\Export\AbstractExport;
-use Thelia\Model\BrandQuery;
-use Thelia\Model\Map\BrandI18nTableMap;
-use Thelia\Model\Map\BrandTableMap;
+use Thelia\Model\CategoryQuery;
+use Thelia\Model\Map\CategoryI18nTableMap;
+use Thelia\Model\Map\CategoryTableMap;
 
 /**
- * Class BrandSEOExport
+ * Class CategorySEOExport
  * @package ImportExportMeta\Controller
  * @author Tom Pradat <tpradat@openstudio.fr>
  */
-class BrandSEOExport extends AbstractExport
+class CategorySEOExport extends AbstractExport
 {
-    const FILE_NAME = 'brand_seo';
+    const FILE_NAME = 'category_seo';
 
     protected $orderAndAliases = [
-        'brand_ID' => 'id',
-        'brand_TITLE' => 'title',
-        'brand_seo_META_TITLE' => 'meta_title',
-        'brand_seo_META_DESCRIPTION' => 'meta_description',
-        'brand_seo_META_KEYWORDS' => 'meta_keywords',
+        'category_ID' => 'id',
+        'category_TITLE' => 'title',
+        'category_seo_META_TITLE' => 'meta_title',
+        'category_seo_META_DESCRIPTION' => 'meta_description',
+        'category_seo_META_KEYWORDS' => 'meta_keywords',
     ];
 
     public function getData()
     {
         $locale = $this->language->getLocale();
 
-        $brandJoin = new Join(BrandTableMap::ID, BrandI18nTableMap::ID, Criteria::LEFT_JOIN);
+        $categoryJoin = new Join(CategoryTableMap::ID, CategoryI18nTableMap::ID, Criteria::LEFT_JOIN);
 
-        $query = BrandQuery::create()
+        $query = CategoryQuery::create()
             ->addSelfSelectColumns()
-            ->addJoinObject($brandJoin, 'brand_join')
-            ->addJoinCondition('brand_join', BrandI18nTableMap::LOCALE . ' = ?', $locale, null, \PDO::PARAM_STR)
-            ->addAsColumn('brand_ID', BrandI18nTableMap::ID)
-            ->addAsColumn('brand_TITLE', BrandI18nTableMap::TITLE)
-            ->addAsColumn('brand_seo_META_TITLE', BrandI18nTableMap::META_TITLE)
-            ->addAsColumn('brand_seo_META_DESCRIPTION', BrandI18nTableMap::META_DESCRIPTION)
-            ->addAsColumn('brand_seo_META_KEYWORDS', BrandI18nTableMap::META_KEYWORDS)
+            ->addJoinObject($categoryJoin, 'category_join')
+            ->addJoinCondition('category_join', CategoryI18nTableMap::LOCALE . ' = ?', $locale, null, \PDO::PARAM_STR)
+            ->addAsColumn('category_ID', CategoryI18nTableMap::ID)
+            ->addAsColumn('category_TITLE', CategoryI18nTableMap::TITLE)
+            ->addAsColumn('category_seo_META_TITLE', CategoryI18nTableMap::META_TITLE)
+            ->addAsColumn('category_seo_META_DESCRIPTION', CategoryI18nTableMap::META_DESCRIPTION)
+            ->addAsColumn('category_seo_META_KEYWORDS', CategoryI18nTableMap::META_KEYWORDS)
         ;
 
         return $query;
