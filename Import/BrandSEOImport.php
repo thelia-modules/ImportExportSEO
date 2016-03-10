@@ -1,6 +1,6 @@
 <?php
 /*************************************************************************************/
-/*      This file is part of the ImportExportMeta package.                           */
+/*      This file is part of the ImportExportSEO package.                           */
 /*                                                                                   */
 /*      Copyright (c) OpenStudio                                                     */
 /*      email : dev@thelia.net                                                       */
@@ -10,7 +10,7 @@
 /*      file that was distributed with this source code.                             */
 /*************************************************************************************/
 
-namespace ImportExportMeta\Import;
+namespace ImportExportSEO\Import;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Thelia\Core\Event\TheliaEvents;
@@ -21,7 +21,7 @@ use Thelia\Model\BrandQuery;
 
 /**
  * Class BrandSEOImport
- * @package ImportExportMeta\Controller
+ * @package ImportExportSEO\Controller
  * @author Tom Pradat <tpradat@openstudio.fr>
  */
 class BrandSEOImport extends AbstractImport
@@ -38,7 +38,7 @@ class BrandSEOImport extends AbstractImport
         $brand = BrandQuery::create()->findPk($data['id']);
         $id = $brand->getId();
 
-        if($brand === null){
+        if ($brand === null) {
             return Translator::getInstance()->trans(
                 'The brand id %id doesn\'t exist',
                 [

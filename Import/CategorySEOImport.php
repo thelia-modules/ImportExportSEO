@@ -1,6 +1,6 @@
 <?php
 /*************************************************************************************/
-/*      This file is part of the ImportExportMeta package.                           */
+/*      This file is part of the ImportExportSEO package.                           */
 /*                                                                                   */
 /*      Copyright (c) OpenStudio                                                     */
 /*      email : dev@thelia.net                                                       */
@@ -10,8 +10,7 @@
 /*      file that was distributed with this source code.                             */
 /*************************************************************************************/
 
-namespace ImportExportMeta\Import;
-
+namespace ImportExportSEO\Import;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Thelia\Core\Event\TheliaEvents;
@@ -22,7 +21,7 @@ use Thelia\Model\CategoryQuery;
 
 /**
  * Class CategorySEOImport
- * @package ImportExportMeta\Controller
+ * @package ImportExportSEO\Controller
  * @author Tom Pradat <tpradat@openstudio.fr>
  */
 class CategorySEOImport extends AbstractImport
@@ -39,7 +38,7 @@ class CategorySEOImport extends AbstractImport
         $category = CategoryQuery::create()->findPk($data['id']);
         $id = $category->getId();
 
-        if($category === null){
+        if ($category === null) {
             return Translator::getInstance()->trans(
                 'The category id %id doesn\'t exist',
                 [

@@ -1,7 +1,7 @@
 <?php
 
 /*************************************************************************************/
-/*      This file is part of the ImportExportMeta package.                           */
+/*      This file is part of the ImportExportSEO package.                           */
 /*                                                                                   */
 /*      Copyright (c) OpenStudio                                                     */
 /*      email : dev@thelia.net                                                       */
@@ -11,7 +11,7 @@
 /*      file that was distributed with this source code.                             */
 /*************************************************************************************/
 
-namespace ImportExportMeta\Import;
+namespace ImportExportSEO\Import;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Thelia\Core\Event\TheliaEvents;
@@ -22,7 +22,7 @@ use Thelia\Core\Translation\Translator;
 
 /**
  * Class ProductSEOImport
- * @package ImportExportMeta\Controller
+ * @package ImportExportSEO\Controller
  * @author Tom Pradat <tpradat@openstudio.fr>
  */
 class ProductSEOImport extends AbstractImport
@@ -44,7 +44,7 @@ class ProductSEOImport extends AbstractImport
         $product = ProductQuery::create()->findOneByRef($data['ref']);
         $id = $product->getId();
 
-        if($product === null){
+        if ($product === null) {
             return Translator::getInstance()->trans(
                 'The product ref %ref doesn\'t exist',
                 [

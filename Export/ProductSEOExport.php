@@ -1,7 +1,7 @@
 <?php
 
 /*************************************************************************************/
-/*      This file is part of the ImportExportMeta package.                           */
+/*      This file is part of the ImportExportSEO package.                           */
 /*                                                                                   */
 /*      Copyright (c) OpenStudio                                                     */
 /*      email : dev@thelia.net                                                       */
@@ -11,7 +11,7 @@
 /*      file that was distributed with this source code.                             */
 /*************************************************************************************/
 
-namespace ImportExportMeta\Export;
+namespace ImportExportSEO\Export;
 
 use Propel\Runtime\ActiveQuery\Criteria;
 use Propel\Runtime\ActiveQuery\Join;
@@ -24,7 +24,7 @@ use Thelia\Model\ProductQuery;
 
 /**
  * Class ProductSEOExport
- * @package ImportExportMeta\Controller
+ * @package ImportExportSEO\Controller
  * @author Benjamin Perche <bperche@openstudio.fr>
  * @author Jérôme Billiras <jbilliras@openstudio.fr>
  */

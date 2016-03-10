@@ -1,4 +1,4 @@
-# Import Export Meta
+# Import Export SEO
 
 This module allows you to import and export seo data of the products, brands, categories, folders and content.
 
@@ -6,7 +6,7 @@ This module allows you to import and export seo data of the products, brands, ca
 
 ### Manually
 
-* Copy the module into ```<thelia_root>/local/modules/``` directory and be sure that the name of the module is ImportExportMeta.
+* Copy the module into ```<thelia_root>/local/modules/``` directory and be sure that the name of the module is ImportExportSEO.
 * Activate it in your thelia administration panel
 
 ### Composer
@@ -14,7 +14,7 @@ This module allows you to import and export seo data of the products, brands, ca
 Add it in your main thelia composer.json file
 
 ```
-composer require thelia/import-export-meta-module:~1.0
+composer require your-vendor/import-export-seo-module:~1.0
 ```
 
 ## Usage

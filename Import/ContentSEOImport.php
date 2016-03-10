@@ -1,6 +1,6 @@
 <?php
 /*************************************************************************************/
-/*      This file is part of the ImportExportMeta package.                           */
+/*      This file is part of the ImportExportSEO package.                           */
 /*                                                                                   */
 /*      Copyright (c) OpenStudio                                                     */
 /*      email : dev@thelia.net                                                       */
@@ -10,8 +10,7 @@
 /*      file that was distributed with this source code.                             */
 /*************************************************************************************/
 
-namespace ImportExportMeta\Import;
-
+namespace ImportExportSEO\Import;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Thelia\Core\Event\TheliaEvents;
@@ -22,7 +21,7 @@ use Thelia\Model\ContentQuery;
 
 /**
  * Class ContentSEOImport
- * @package ImportExportMeta\Controller
+ * @package ImportExportSEO\Controller
  * @author Tom Pradat <tpradat@openstudio.fr>
  */
 class ContentSEOImport extends AbstractImport
@@ -39,7 +38,7 @@ class ContentSEOImport extends AbstractImport
         $content = ContentQuery::create()->findPk($data['id']);
         $id = $content->getId();
 
-        if($content === null){
+        if ($content === null) {
             return Translator::getInstance()->trans(
                 'The content id %id doesn\'t exist',
                 [

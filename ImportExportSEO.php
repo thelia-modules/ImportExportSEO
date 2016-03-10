@@ -10,13 +10,13 @@
 /*      file that was distributed with this source code.                             */
 /*************************************************************************************/
 
-namespace ImportExportMeta;
+namespace ImportExportSEO;
 
 use Thelia\Module\BaseModule;
 
-class ImportExportMeta extends BaseModule
+class ImportExportSEO extends BaseModule
 {
     /** @var string */
-    const DOMAIN_NAME = 'importexportmeta';
+    const DOMAIN_NAME = 'ImportExportSEO';
 
 }

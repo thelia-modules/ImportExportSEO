@@ -1,6 +1,6 @@
 <?php
 /*************************************************************************************/
-/*      This file is part of the ImportExportMeta package.                           */
+/*      This file is part of the ImportExportSEO package.                           */
 /*                                                                                   */
 /*      Copyright (c) OpenStudio                                                     */
 /*      email : dev@thelia.net                                                       */
@@ -10,7 +10,7 @@
 /*      file that was distributed with this source code.                             */
 /*************************************************************************************/
 
-namespace ImportExportMeta\Export;
+namespace ImportExportSEO\Export;
 
 
 use Propel\Runtime\ActiveQuery\Criteria;
@@ -22,7 +22,7 @@ use Thelia\Model\Map\CategoryTableMap;
 
 /**
  * Class CategorySEOExport
- * @package ImportExportMeta\Controller
+ * @package ImportExportSEO\Controller
  * @author Tom Pradat <tpradat@openstudio.fr>
  */
 class CategorySEOExport extends AbstractExport
