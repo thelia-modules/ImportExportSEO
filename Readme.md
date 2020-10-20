@@ -14,7 +14,7 @@ This module allows you to import and export seo data of the products, brands, ca
 Add it in your main thelia composer.json file
 
 ```
-composer require thelia/import-export-seo-module:~1.0
+composer require thelia/import-export-seo-module ~1.0.0
 ```
 
 ## Usage
