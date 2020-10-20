@@ -1,5 +1,6 @@
 {
   "name": "thelia/import-export-seo-module",
+  "description": "This module allows you to import and export seo data of the products, brands, categories, folders and content."
   "license": "LGPL-3.0+",
   "type": "thelia-module",
   "require": {
